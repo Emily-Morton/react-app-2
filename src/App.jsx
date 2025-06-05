@@ -5,23 +5,22 @@ import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import "./App.css";
 import "./index.css";
-import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import PageLayout from "./components/PageLayout";
+import MessageDisplay from "./components/MessageDisplay";
 
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
       <Router>
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-      </nav>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<PageLayout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="param/:message" element={<MessageDisplay />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </Router>
     </>
