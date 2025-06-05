@@ -1,10 +1,11 @@
 import { useParams } from 'react-router';
+import { Typography } from '@mui/material';
 
 function MessageDisplay(){
   const {message} = useParams();
 
   return (
-    <p>{message}</p>
+    <Typography variant='h1' component='p'>{message}</Typography>
   );
 }
 
