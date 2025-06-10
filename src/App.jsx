@@ -16,6 +16,8 @@ import FAQs from "./pages/FAQs";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import PageLayout from "./components/PageLayout";
 import MessageDisplay from "./components/MessageDisplay";
+import Cars from "./pages/Cars";
+import { CarsProvider } from "./components/contexts/CarsContext";
 
 import { ThemeProvider } from "@mui/system";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -27,16 +29,19 @@ function App() {
       <CssBaseline/>
       <Router>
       <ThemeProvider theme={theme}>
+      <CarsProvider>
         <Routes>
           <Route path="/" element={<PageLayout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
+            <Route path="cars" element={<Cars />} />
             <Route path="contact" element={<Contact />} />
             <Route path="faqs" element={<FAQs />} />
             <Route path="param/:message" element={<MessageDisplay />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
+        </CarsProvider>
       </ThemeProvider>
       </Router>
     </>
