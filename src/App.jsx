@@ -12,12 +12,13 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import FAQs from "./pages/FAQs";
+import CarForm from "./pages/CarForm";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import PageLayout from "./components/PageLayout";
 import MessageDisplay from "./components/MessageDisplay";
 import Cars from "./pages/Cars";
-import { CarsProvider } from "./components/contexts/CarsContext";
+import { CarsProvider } from "./components/contexts/CarsProvider";
 
 import { ThemeProvider } from "@mui/system";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -35,6 +36,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="cars" element={<Cars />} />
+            <Route path="form" element={<CarForm />} />
             <Route path="contact" element={<Contact />} />
             <Route path="faqs" element={<FAQs />} />
             <Route path="param/:message" element={<MessageDisplay />} />

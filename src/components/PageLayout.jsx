@@ -11,6 +11,7 @@ function PageLayout() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/cars">Cars</NavLink>
+        <NavLink to="/form">Cars Form</NavLink>
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/faqs">FAQs</NavLink>
       </nav>
